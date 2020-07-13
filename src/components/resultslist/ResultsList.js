@@ -7,7 +7,7 @@ function ResultsList(props) {
     return (
 
         <form>
-            <Table>
+            <Table striped bordered hover size="sm" responsive>
                 <thead>
                     <tr>
                         <th>Image</th>
@@ -27,13 +27,7 @@ function ResultsList(props) {
                     ))}
                 </tbody>
             </Table>
-            {/* <ListGroup.Item>{person.picture}</ListGroup.Item>
-                    <ListGroup.Item>{`${person.first_name} ${person.last_name}`}</ListGroup.Item>
-                    <ListGroup.Item>{person.email}</ListGroup.Item>
-                    <ListGroup.Item>{person.phone_number}</ListGroup.Item>
-                </ListGroup> */}
         </form>
-
     )
 };
 

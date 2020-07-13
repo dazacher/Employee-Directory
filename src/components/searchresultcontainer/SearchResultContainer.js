@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SearchForm from "../searchform/SearchForm"
 import ResultsList from "../resultslist/ResultsList"
 import Employees from "../../data/randomuser.json"
-import API from "../../utils/api/API";
+
 
 class SearchResultContainer extends Component {
     state = {
@@ -11,32 +11,34 @@ class SearchResultContainer extends Component {
     };
 
 
-    // When this component mounts, search the Giphy API for pictures of kittens
     componentDidMount() {
         console.log("Component mounted");
-        // this.searchRandomUser("");
     }
 
-    searchRandomUser = query => {
-        API.search(query)
-        .then(res => {
-            console.log(res);
-            // this.setState({ results: res.data.data })
-        })
-            .catch(err => console.log(err));
+    handleInputChange = event => {
+        console.log("HandleInputCHange");
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({
+            [name]: value
+        });
+        this.searchByName(name)
     };
 
-    // searchByFirstName = event => {
-
-    // }
+    searchByName = name => {
+        let searchedForName = this.results.filter(results => {
+            return results.first_name = name;
+             
+        })
+// filter through results array and update state with new updated array
+    }
 
     render() {
         return (
             <div>
                 <SearchForm
                     search={this.state.search}
-                    //   handleFormSubmit={this.handleFormSubmit}
-                    // searchByFirstName={this.searchByFirstName}
+                    handleInputChange={this.handleInputChange}
                 />
                 <ResultsList results={this.state.results} />
             </div>
