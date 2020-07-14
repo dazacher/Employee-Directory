@@ -1,17 +1,12 @@
 import React, { Component } from "react";
 import ResultsList from "../resultslist/ResultsList"
-// import Employees from "../../data/randomuser.json"
 import axios from "axios";
-// import DatatablePage from "../resultslist/ResultsList";
-// import { MDBDataTable } from 'mdbreact';
 
 
 class SearchResultContainer extends Component {
     state = {
-        
         employeeRecords: []
     };
-
 
     componentDidMount = () => {
         axios.get("https://randomuser.me/api/?results=100&nat=us")
@@ -31,8 +26,6 @@ class SearchResultContainer extends Component {
             }
             this.setState({ employeeRecords: employeeRecords });
         })
-        
-        console.log("Component mounted");
     }
 
     
