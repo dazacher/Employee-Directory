@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import SearchForm from "../searchform/SearchForm"
 import ResultsList from "../resultslist/ResultsList"
 // import Employees from "../../data/randomuser.json"
 import axios from "axios";
