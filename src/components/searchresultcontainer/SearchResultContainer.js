@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import SearchForm from "../searchform/SearchForm"
-// import ResultsList from "../resultslist/ResultsList"
+import ResultsList from "../resultslist/ResultsList"
 // import Employees from "../../data/randomuser.json"
 import axios from "axios";
-import DatatablePage from "../resultslist/ResultsList";
+// import DatatablePage from "../resultslist/ResultsList";
 // import { MDBDataTable } from 'mdbreact';
 
 
@@ -36,24 +36,7 @@ class SearchResultContainer extends Component {
         console.log("Component mounted");
     }
 
-    // handleInputChange = event => {
-    //     console.log("HandleInputCHange");
-    //     const name = event.target.name;
-    //     const value = event.target.value;
-    //     this.setState({
-    //         [name]: value
-    //     });
-    //     this.searchByName(name)
-    // };
-
-    // searchByName = name => {
-    //     let searchedForName = this.results.filter(results => {
-    //         return results.first_name = {name};
-             
-    //     })
-// filter through results array and update state with new updated array
-    // }
-
+    
     render() {
         return (
             <div>
@@ -61,7 +44,7 @@ class SearchResultContainer extends Component {
                     search={this.state.search}
                     handleInputChange={this.handleInputChange}
                 />
-                <DatatablePage employeeRecords={this.state.employeeRecords} />
+                <ResultsList employeeRecords={this.state.employeeRecords} />
             </div>
         );
     }

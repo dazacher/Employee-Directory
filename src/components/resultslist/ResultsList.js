@@ -1,7 +1,7 @@
 import React from "react";
 import { MDBDataTable } from 'mdbreact';
 
-const DatatablePage = (props) => {
+const ResultsList = (props) => {
     const employeeData = {
         columns: [
             {
@@ -74,4 +74,4 @@ const DatatablePage = (props) => {
 //     )
 // };
 
-export default DatatablePage;
+export default ResultsList;
