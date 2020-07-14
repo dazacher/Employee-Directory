@@ -38,6 +38,7 @@ const ResultsList = (props) => {
             bordered
             responsive
             small
+            entriesOptions={[20, 30, 40, 50, 75, 100]}
             data={employeeData}
         />
     );
