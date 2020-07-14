@@ -40,10 +40,6 @@ class SearchResultContainer extends Component {
     render() {
         return (
             <div>
-                <SearchForm
-                    search={this.state.search}
-                    handleInputChange={this.handleInputChange}
-                />
                 <ResultsList employeeRecords={this.state.employeeRecords} />
             </div>
         );
