@@ -1,34 +1,77 @@
 import React from "react";
-import Table from "react-bootstrap/Table";
+import { MDBDataTable } from 'mdbreact';
 
+const DatatablePage = (props) => {
+    const employeeData = {
+        columns: [
+            {
+                label: 'Image',
+                field: 'picture'
+            },
+            {
+                label: 'First Name',
+                field: 'firstName',
+                sort: 'asc'
+            },
+            {
+                label: 'Last Name',
+                field: 'lastName',
+                sort: 'asc'
+            },
+            {
+                label: 'Email',
+                field: 'email',
+                sort: 'asc'
+            },
+            {
+                label: 'Phone Number',
+                field: 'phone'
 
-function ResultsList(props) {
+            }
+        ],
+        rows: props.employeeRecords
+    };
 
     return (
-
-        <form>
-            <Table striped bordered hover size="sm" responsive>
-                <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone Number</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {props.results.map((person, id) => (
-                        <tr  key={id}>
-                            <td><img alt={`${person.first_name} ${person.last_name}`} src={`./pictures/${person.picture}`}></img></td>
-                            <td>{`${person.first_name} ${person.last_name}`}</td>
-                            <td>{person.email}</td>
-                            <td>{person.phone_number}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </Table>
-        </form>
-    )
+        <MDBDataTable
+            striped
+            bordered
+            responsive
+            small
+            data={employeeData}
+        />
+    );
 };
 
-export default ResultsList;
+// function ResultsList(props) {
+
+//     return (
+
+//         <form>
+//             <MDBDataTable striped bordered hover size="sm" responsive>
+//                 <thead>
+//                     <tr>
+//                         <th>Image</th>
+//                         <th sort="asc">First Name</th>
+//                         <th sort="asc">Last Name</th>
+//                         <th>Email</th>
+//                         <th>Phone Number</th>
+//                     </tr>
+//                 </thead>
+//                 <tbody>
+//                     {props.employeeRecords.map((person, id) => (
+//                         <tr key={id}>
+//                             <td sort><img alt={`${person.first} ${person.last}`} src={`./pictures/${person.picture}`}></img></td>
+//                             <td>{person.first}</td>
+//                             <td>{person.last}</td>
+//                             <td>{person.email}</td>
+//                             <td>{person.phone}</td>
+//                         </tr>
+//                     ))}
+//                 </tbody>
+//             </MDBDataTable>
+//         </form >
+//     )
+// };
+
+export default DatatablePage;
