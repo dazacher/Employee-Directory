@@ -39,7 +39,6 @@ const ResultsList = (props) => {
             bordered
             responsive
             small
-            sortable
             entriesOptions={[10, 20, 30, 40, 50, 75, 100]}
             data={employeeData}
         />
