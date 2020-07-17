@@ -1,5 +1,5 @@
 .jumbotron {
-    background-image: url("/assets/images/colorful_abstract.jpg");
+    background-image: url("../../assets/images/colorful_abstract.jpg");
     background-repeat: yes; 
     background-size: cover; 
     background-position: center;
