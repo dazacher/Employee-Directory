@@ -7,7 +7,7 @@ const ResultsList = (props) => {
             {
                 label: 'Image',
                 field: 'picture',
-                sort: 'asc'
+                sort: 'disabled'
             },
             {
                 label: 'First Name',
